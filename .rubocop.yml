@@ -1,0 +1,5 @@
+require:
+  - rubocop-avoid_unless
+
+Style/AvoidUnless:
+  Enabled: true
