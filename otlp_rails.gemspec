@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
     "OpenTelemetry SDK setup."
   spec.homepage = "https://github.com/endoze/otlp_rails"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 3.1"
+  spec.required_ruby_version = ">= 3.2"
 
   spec.files = Dir["lib/**/*", "LICENSE.txt", "README.md", "CHANGELOG.md"]
   spec.require_paths = ["lib"]

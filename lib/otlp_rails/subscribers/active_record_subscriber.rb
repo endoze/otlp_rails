@@ -23,9 +23,9 @@ module OTLPRails
       end
 
       def on_event(_name, started, finished, _unique_id, payload)
-        return if payload[:name].blank?
+        return if payload[:name].nil? || payload[:name].to_s.empty?
         return if SKIP_NAMES.include?(payload[:name])
-        return if payload[:sql].blank?
+        return if payload[:sql].nil? || payload[:sql].to_s.empty?
 
         operation = extract_operation(payload[:sql])
         return if !operation
