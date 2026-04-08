@@ -17,7 +17,7 @@ class SubscriberRegistryTest < Minitest::Test
     registry = OTLPRails::SubscriberRegistry.instance
     registry.subscribe_all(@meter)
 
-    assert_equal 3, registry.instance_variable_get(:@active_subscribers).size
+    assert_equal 4, registry.instance_variable_get(:@active_subscribers).size
   end
 
   def test_skips_disabled_subscriber
@@ -29,7 +29,7 @@ class SubscriberRegistryTest < Minitest::Test
     registry.subscribe_all(@meter)
 
     subscribers = registry.instance_variable_get(:@active_subscribers)
-    assert_equal 2, subscribers.size
+    assert_equal 3, subscribers.size
     refute subscribers.any? { |s| s.is_a?(OTLPRails::Subscribers::ActiveRecordSubscriber) }
   end
 
@@ -55,7 +55,7 @@ class SubscriberRegistryTest < Minitest::Test
     registry.subscribe_all(@meter)
 
     subscribers = registry.instance_variable_get(:@active_subscribers)
-    assert_equal 4, subscribers.size
+    assert_equal 5, subscribers.size
     assert subscribers.any? { |s| s.is_a?(custom_class) }
   end
 

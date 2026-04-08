@@ -7,7 +7,8 @@ module OTLPRails
     BUILT_IN_SUBSCRIBERS = {
       action_controller: Subscribers::ActionControllerSubscriber,
       active_record: Subscribers::ActiveRecordSubscriber,
-      active_job: Subscribers::ActiveJobSubscriber
+      active_job: Subscribers::ActiveJobSubscriber,
+      active_support_cache: Subscribers::ActiveSupportCacheSubscriber
     }.freeze
 
     def initialize

@@ -5,6 +5,7 @@ require "otlp_rails/subscriber"
 require "otlp_rails/subscribers/action_controller_subscriber"
 require "otlp_rails/subscribers/active_record_subscriber"
 require "otlp_rails/subscribers/active_job_subscriber"
+require "otlp_rails/subscribers/active_support_cache_subscriber"
 require "otlp_rails/subscriber_registry"
 require "otlp_rails/railtie" if defined?(Rails::Railtie)
 
