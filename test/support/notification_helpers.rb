@@ -55,6 +55,40 @@ module NotificationHelpers
     end
   end
 
+  def simulate_cache_read(store: "ActiveSupport::Cache::MemoryStore", hit: true)
+    payload = {
+      store: store,
+      hit: hit,
+      key: "test_key"
+    }
+
+    ActiveSupport::Notifications.instrument("cache_read.active_support", payload) do
+      # simulate work
+    end
+  end
+
+  def simulate_cache_write(store: "ActiveSupport::Cache::MemoryStore")
+    payload = {
+      store: store,
+      key: "test_key"
+    }
+
+    ActiveSupport::Notifications.instrument("cache_write.active_support", payload) do
+      # simulate work
+    end
+  end
+
+  def simulate_cache_delete(store: "ActiveSupport::Cache::MemoryStore")
+    payload = {
+      store: store,
+      key: "test_key"
+    }
+
+    ActiveSupport::Notifications.instrument("cache_delete.active_support", payload) do
+      # simulate work
+    end
+  end
+
   private
 
   def build_job_class(name)

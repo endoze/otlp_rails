@@ -18,7 +18,8 @@ module OTLPRails
       @subscriber_settings = {
         action_controller: {enabled: true},
         active_record: {enabled: true},
-        active_job: {enabled: true}
+        active_job: {enabled: true},
+        active_support_cache: {enabled: true}
       }
 
       @custom_subscribers = []
